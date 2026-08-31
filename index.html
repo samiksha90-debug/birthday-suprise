@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MISSION PAJJU 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <canvas id="confetti"></canvas>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- START SCREEN -->
+  <section class="screen active" id="start">
+    <main>
+      <div class="top">
+        ● ● ● <span>CLASSIFIED FILE</span>
+      </div>
+
+      <div class="icon">🚨</div>
+
+      <p class="green">SYSTEM ONLINE...</p>
+      <h1>MISSION PAJJU</h1>
+      <p>Birthday Edition • 01 September</p>
+
+      <hr>
+
+      <p>
+        AGENT: <b>PAJJU</b><br>
+        HANDLER: <b>SAMU 😎</b>
+      </p>
+
+      <button onclick="start()">START MISSION 🚀</button>
+    </main>
+  </section>
+
+  <!-- QUESTION SCREEN -->
+  <section class="screen" id="q">
+    <main>
+      <p class="green">LEVEL 01 / SECURITY CHECK</p>
+
+      <h2>🕵️ One question...</h2>
+
+      <p>Where did Samu slap Pajju? 👋😂</p>
+
+      <input id="ans" placeholder="Type the secret answer">
+
+      <button onclick="check()">UNLOCK 🔓</button>
+
+      <p id="wrong"></p>
+    </main>
+  </section>
+
+  <!-- FILES SCREEN -->
+  <section class="screen" id="levels">
+    <main class="wide">
+
+      <p class="green">MEMORY DATABASE UNLOCKED</p>
+
+      <h2>📂 Pajju's Files</h2>
+
+      <div class="grid">
+
+        <button onclick="memory(
+          'Rakhi',
+          '🪢',
+          'When we meet for Rakhi, we somehow turn a simple meeting into a full Samu-Pajju comedy episode. 😂'
+        )">
+          🪢 RAKHI FILE
+        </button>
+
+        <button onclick="memory(
+          'Classes',
+          '📚',
+          'At classes, the actual syllabus was secondary. Teasing each other over the tiniest things was clearly the main subject. 😭😂'
+        )">
+          📚 CLASS FILE
+        </button>
+
+        <button onclick="memory(
+          'The Incident',
+          '👋',
+          'LOCATION: Near tuition hall. STATUS: HISTORICAL. SUSPECT: SAMU. VICTIM: PAJJU. MOTIVE: Classified. 😂'
+        )">
+          👋 INCIDENT FILE
+        </button>
+
+        <button onclick="photos()">
+          📸 PHOTO VAULT
+        </button>
+
+      </div>
+
+      <p id="status">Complete all 4 files.</p>
+
+      <button id="cakeBtn" class="hide" onclick="go('cake')">
+        FINAL LEVEL 🎂
+      </button>
+
+    </main>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <main>
+
+      <button class="close" onclick="closeM()">×</button>
+
+      <div id="content"></div>
+
+    </main>
+  </div>
+
+  <!-- CAKE SCREEN -->
+  <section class="screen" id="cake">
+    <main>
+
+      <p class="green">FINAL LEVEL</p>
+
+      <h2>🎂 WISH PROTOCOL</h2>
+
+      <p>Extinguish all three candles.</p>
+
+      <div class="cake">
+
+        <div class="candles">
+          <button onclick="candle(this)">🕯️</button>
+          <button onclick="candle(this)">🕯️</button>
+          <button onclick="candle(this)">🕯️</button>
+        </div>
+
+        <div class="icing"></div>
+
+        <div class="cakebody">
+          PAJJU<br>
+          🎂
+        </div>
+
+      </div>
+
+      <p id="count">3 candles remaining...</p>
+
+      <button id="final" class="hide" onclick="reveal()">
+        INITIATE FINAL SURPRISE 💥
+      </button>
+
+    </main>
+  </section>
+
+  <!-- FINAL SCREEN -->
+  <section class="screen" id="final">
+    <main class="wide final">
+
+      <div class="stars">✨ 🌟 ✨</div>
+
+      <h1>
+        HAPPY BIRTHDAY<br>
+        PAJJU! ❤️
+      </h1>
+
+      <p class="green">MISSION COMPLETED</p>
+
+      <div class="twocol">
+
+        <div>
+          <h3>📸 SECRET PHOTO</h3>
+
+          <div class="photo">
+            <img
+              src="photos/photo4.jpeg"
+              alt="Secret Photo"
+            >
+          </div>
+        </div>
+
+        <div class="letter">
+
+          <h3>💌 FROM SAMU</h3>
+
+          <p>
+            Pajju, we fight, tease, annoy each other and somehow turn the
+            smallest things into a full comedy show. 😂
+          </p>
+
+          <p>
+            From our Rakhi meetings to silly class teasing—and yes, the
+            legendary slap near the tuition hall—every memory is special
+            because it's ours.
+          </p>
+
+          <p>
+            I'm genuinely lucky to have you as my brother. I hope your new
+            year brings happiness, success, unforgettable moments and
+            everything you wish for.
+          </p>
+
+          <p><b>Happy Birthday, Pajju! ❤️</b></p>
+
+          <p>— Your Samu 😎</p>
+
+        </div>
+
+      </div>
+
+      <div class="roast">
+
+        <h3>😂 OFFICIAL PAJJU ROAST</h3>
+
+        <p>After extensive investigation:</p>
+
+        <p>
+          <b>
+            PAJJU IS 100% ANNOYING, 100% TEASABLE,
+            AND 100% IRREPLACEABLE.
+          </b>
+          😌
+        </p>
+
+        <p>Case closed. 🔨😂</p>
+
+      </div>
+
+      <h2>Keep shining, Pajju. 🌟</h2>
+
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
